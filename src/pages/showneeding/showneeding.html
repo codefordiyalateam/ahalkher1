@@ -1,0 +1,62 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>تفاصيل الحاجة</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card >
+
+        <ion-item   color="white">
+            <ion-avatar item-start>             
+                <img src="assets/imgs/about1.png">
+              </ion-avatar>
+      
+           <h2> الحاجة : {{myInfo.firstname}} </h2>   
+
+           <h2> المتبرع : {{myInfo.lastname}}</h2>
+
+             <h2>{{addBy}}</h2>
+           <!-- <button ion-button block *ngIf="myInfo.addBy == userid" >
+              حذف
+            </button> -->
+          </ion-item>    
+         
+        </ion-card>
+
+
+
+        <ion-card   color="white">        
+
+            <ion-card-header>
+                <h2 text-right  style="color:#f53d3d;font-weight:bold">نبذة عن الحاجة </h2>
+           </ion-card-header>
+
+        <ion-card-content>  
+                 
+          <p text-justify>  {{myInfo.infor}} </p>   
+             
+             <ion-row>
+
+          <ion-col>
+            <p  text-right><ion-icon ios="ios-call" md="md-call"  color="danger" >   </ion-icon>
+              {{myInfo.phone}} </p>
+               </ion-col>  
+
+             <ion-col>
+              <p   text-left><ion-icon ios="ios-compass" md="md-compass"  color="primary" > </ion-icon>                       
+                {{myInfo.address}} </p>            
+             </ion-col>
+         
+        </ion-row>
+
+  </ion-card-content> 
+     </ion-card> 
+    
+
+</ion-content>

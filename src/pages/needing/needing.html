@@ -1,0 +1,55 @@
+
+ <ion-header>
+
+  <ion-navbar color="primary"> 
+   <ion-title >حاجات متبرع بها</ion-title>
+   
+        <ion-buttons end>
+          <button small outline ion-button color="light"  (click)="goToAdd()">
+            <ion-icon name='ios-add-circle' is-active="false" color="light">تبرع</ion-icon>
+          </button>
+        </ion-buttons>
+          
+  </ion-navbar>
+ </ion-header>
+
+
+   <ion-content > 
+     
+    <!--  <ion-searchbar >           
+       </ion-searchbar>-->  
+             
+     <ion-list>    
+
+    <!-- <button class="caselist"  ion-item   >            
+
+      <ion-avatar item-start>             
+        <img src="assets/imgs/about1.png"  width="0px" height="0px" >
+      </ion-avatar>
+
+
+     
+        <h2>{{item.payload.val().firstname}} </h2>
+       
+            <button ion-button *ngIf="item.payload.val().addBy == userid" (click)="delete(item.payload.val().key)" style="width:30px;display:inline-block;">حذف</button>
+            <button ion-button clear item-end> لتفاصيل اكثر</button>        
+            <!-- {{userid}} -->
+         <!-- </button> -->
+        
+        </ion-list>
+        <ion-list *ngFor="let item of items   | async json">
+          <ion-item *ngIf="item.hide == 0" >
+            <ion-avatar item-start>
+              <img src="./assets/imgs/about1.png">
+            </ion-avatar>
+            <h2 style="text-align:center">{{item.firstname}}</h2>
+            <button ion-button 
+            *ngIf="userid == item.addBy"
+             (click)="deleteMy(item.key)" block style="background-color:red">حذف</button>
+            <button ion-button style="float:left"
+             (click)="itemSelected(item.key,item.firstname,item.lastname,
+             item.address,item.phone,item.infor)" block >التفاصيل</button >
+          </ion-item>
+        </ion-list>
+
+    </ion-content>
