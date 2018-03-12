@@ -29,11 +29,11 @@ import { AngularFireModule} from 'angularfire2';
  import { AngularFirestore  } from 'angularfire2/firestore';
 
 
- import { Geolocation } from '@ionic-native/geolocation';
+
  import { HttpModule } from '@angular/http';
 
 
- import {GoogleMaps} from '@ionic-native/google-maps';
+
  
   
 
@@ -101,7 +101,7 @@ import { AngularFireModule} from 'angularfire2';
    
   ],
   providers: [   
-    Geolocation,
+
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
