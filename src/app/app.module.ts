@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
 //pages
 import { AboutPage } from '../pages/about/about';
@@ -70,6 +72,7 @@ import { AngularFireModule} from 'angularfire2';
    
   ],
   imports: [   
+    
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       backButtonText: 'الرجوع',
@@ -101,7 +104,9 @@ import { AngularFireModule} from 'angularfire2';
    
   ],
   providers: [   
-
+    
+    Facebook,
+    GooglePlus,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
