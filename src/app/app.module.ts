@@ -40,12 +40,12 @@ import { AngularFireModule} from 'angularfire2';
   
 
  export const  firebaseConfig = {
-    apiKey: "AIzaSyDNz2O-TcoXsElQLndpGrJPPmuYAAr9KsY",
-    authDomain: "ahlkhar-e9fb2.firebaseapp.com",
-    databaseURL: "https://ahlkhar-e9fb2.firebaseio.com",
-    projectId: "ahlkhar-e9fb2",
-    storageBucket: "ahlkhar-e9fb2.appspot.com",
-    messagingSenderId: "467476128672"
+  apiKey: "AIzaSyDbVWK2phjQ1anZuyTWCAyDpWhDOheFWMQ",
+  authDomain: "ahlkhar-198020.firebaseapp.com",
+  databaseURL: "https://ahlkhar-198020.firebaseio.com",
+  projectId: "ahlkhar-198020",
+  storageBucket: "ahlkhar-198020.appspot.com",
+  messagingSenderId: "134697031230"
   };
 
 

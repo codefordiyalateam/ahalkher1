@@ -71,16 +71,11 @@ export class LoginPage {
       console.log('Dismissed toast');
     });
     this.googlePlus.login({
-      'webClientId': '845678624395-rfu3398dboqm2ot6i1mrnhhig4cmgdl7.apps.googleusercontent.com',
+      'webClientId': '614542000368-sgioom8nioq20dii53dl8r765prjrkr7.apps.googleusercontent.com',
       'offline': true
-    }).then( res => {
-      this.fire.auth.signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken))
-        .then( success => {
-          this.navCtrl.setRoot(AddneedingPage);
-          alert("Firebase success: " + JSON.stringify(success));
-        })
-        .catch( error =>alert("Firebase failure: " + JSON.stringify(error)));
-      }).catch(err => alert("Error: "+ err));
+    }).then(res => alert(res))
+    .catch(err => alert(err));
+   
   
   }
   facebook(){
