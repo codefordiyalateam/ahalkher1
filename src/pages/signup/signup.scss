@@ -4,8 +4,10 @@ page-signup {
     .label{
 
         padding-top: 0;
-        padding-right: 10px;    
-        color:black;
+        padding-right: 10px;        
+       // color:rgb(58, 52, 52);
+         color:#127bca;
+         //color:#f53d3d;      
         font-weight: bold;            
         font-size: 15px;
      
@@ -14,36 +16,9 @@ page-signup {
    .ion-list{
        padding-top:10px;
        
-        }
-   
-   
-   
-    //   .input{
-    //     background-color:white;
-    //     margin:0;  
-    //     border-radius: 25px;
-    //     color:black;
-    //     padding-right: 5px;
-    //     border:2px;          
-    //     border: 1px inset #f53d3d;
-    //     }
-   
+        }   
        
-   
-   .ion-textarea{
-
-    width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-
-
-      
-   }
+  
 
    .button{
     border-radius: $button-md-border-radius;

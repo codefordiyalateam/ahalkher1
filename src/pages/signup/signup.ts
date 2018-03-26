@@ -29,44 +29,12 @@ export class SignupPage {
 
 
 
-  // Signup()  {
- 
-
-  //   this.register.auth.createUserWithEmailAndPassword (this.email,this.password) 
-
-  //   .then(user => { this.navCtrl.push ( LoginPage ) ,
-      
-  //     console.log("Email : " + this.email + "   " +"Password : " +this.password) })
-      
-  //   .catch(function (error) { console.log(error) }); 
-
-  //  }
-
 
   
    gotoLogin()  {  this.navCtrl.push ( LoginPage ) ;  }
 
 
 
-  // GoogleLogin()   { 
-
-  //   this.fire.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(res =>{
-  //     console.log(res);
-  //     this. navCtrl.push( AddneedingPage)
-  //   }) 
- 
-  //  }
-  
-
-  // FacebookLogin() { 
-
-  //   this.fire.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(res =>{
-  //     console.log(res);
-  //     this. navCtrl.push(AddneedingPage)
-     
-  //   }) 
- 
-  //  }
   Signup(){
   let email_already_in_use = this.toastCtrl.create({
     message: 'هذا المستخدم موجود مسبقاً ..!',

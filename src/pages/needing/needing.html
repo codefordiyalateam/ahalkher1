@@ -16,27 +16,9 @@
 
    <ion-content > 
      
-    <!--  <ion-searchbar >           
-       </ion-searchbar>-->  
+   
              
-     <ion-list>    
-
-    <!-- <button class="caselist"  ion-item   >            
-
-      <ion-avatar item-start>             
-        <img src="assets/imgs/about1.png"  width="0px" height="0px" >
-      </ion-avatar>
-
-
-     
-        <h2>{{item.payload.val().firstname}} </h2>
-       
-            <button ion-button *ngIf="item.payload.val().addBy == userid" (click)="delete(item.payload.val().key)" style="width:30px;display:inline-block;">حذف</button>
-            <button ion-button clear item-end> لتفاصيل اكثر</button>        
-            <!-- {{userid}} -->
-         <!-- </button> -->
-        
-        </ion-list>
+   
         <ion-list *ngFor="let item of items   | async json">
           <ion-item *ngIf="item.hide == 0" >
             <ion-avatar item-start>

@@ -85,16 +85,12 @@ export class NeedingPage {
     this.navCtrl.push (HomePage)
   }
 
-   goToAdd(){
-
-    //if the user is already logged in 
-    //this.navCtrl.push (AddneedingPage)
-
-   //else
+   goToAdd(){   
    
-   this.navCtrl.push (LoginPage)//AddneedingPage
+   this.navCtrl.push (LoginPage)
 
    }
+
   deleteMy(key){
     alert("ok")
     this. userData = this.af.list('/device')
@@ -106,6 +102,7 @@ export class NeedingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NeedingPage');
   }
+  
   delete(key){
     console.log(key);
   }

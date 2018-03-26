@@ -18,34 +18,22 @@
    
 
     <ion-item>
-      <ion-label floating> <ion-icon ios="ios-person" md="md-person"> البريدالالكتروني</ion-icon> </ion-label>
+      <ion-label floating> <ion-icon ios="ios-person" md="md-person" color="danger"> البريدالالكتروني</ion-icon> </ion-label>
 
          <ion-input type="text" [(ngModel)]="email" ></ion-input>
     </ion-item>
                  
     <ion-item>
-         <ion-label floating>  <ion-icon ios="ios-lock" md="md-lock"> كلمة المرور </ion-icon></ion-label>
+         <ion-label floating>  <ion-icon ios="ios-lock" md="md-lock" color="danger"> كلمة المرور </ion-icon></ion-label>
          <ion-input type="password"  [(ngModel)]="password"></ion-input>
     </ion-item>
 
                   
-    <ion-item>            
-      <button ion-button  block large  icon-right   (click)="Signup()"  >
-        <ion-icon name= ios-add-circle  large > اضافة حساب </ion-icon>        
-
+    <ion-item>                  
+      <button ion-button  block large  icon-right  color="primary"  (click)="Signup()"  >
+        <ion-icon name= ios-add-circle  large   > اضافة حساب </ion-icon>  
       </button>        
-    </ion-item>
-        
-
-    <ion-item>
-
-      <button ion-button block large  icon-right color="danger" (click)="gotoLogin()"  >
-          <ion-icon name= ios-log-in  large> دخول </ion-icon>              
-         
-        </button>
-
-    </ion-item>  
-
+    </ion-item> 
     
 
 
