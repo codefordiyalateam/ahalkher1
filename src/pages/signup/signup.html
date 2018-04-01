@@ -12,9 +12,9 @@
 
   <ion-content padding>
 
-  <ion-list>
+  <!-- <ion-list> -->
 
-      <ion-item> قم بانشاء حساب </ion-item>    
+      <!-- <p text-center> قم بانشاء حسابك</p>     -->
    
 
     <ion-item>
@@ -28,16 +28,18 @@
          <ion-input type="password"  [(ngModel)]="password"></ion-input>
     </ion-item>
 
-                  
-    <ion-item>                  
+      
+    <div padding>
+    <!-- <ion-item>                   -->
       <button ion-button  block large  icon-right  color="primary"  (click)="Signup()"  >
-        <ion-icon name= ios-add-circle  large   > اضافة حساب </ion-icon>  
+        <div style="margin: 8px">اضافة حساب</div>
+        <ion-icon name= ios-add-circle  large   >  </ion-icon>  
       </button>        
-    </ion-item> 
+    <!-- </ion-item>  -->
     
+  </div>
 
-
-   </ion-list>
+   <!-- </ion-list> -->
   
 
  

@@ -8,7 +8,7 @@
 
 <ion-content padding>
 
-  <ion-list>
+  <!-- <ion-list> -->
 
      <ion-item>
          <ion-label floating> <ion-icon ios="ios-person" md="md-person" color="danger"> البريدالالكتروني</ion-icon> </ion-label>
@@ -20,37 +20,45 @@
          <ion-label floating>  <ion-icon ios="ios-lock" md="md-lock" color="danger"> كلمة المرور </ion-icon></ion-label>
          <ion-input type="password"  [(ngModel)]="password" ></ion-input>
     </ion-item>
-       
-    <ion-item>
- 
-           <button ion-button block large  icon-right  (click)= "  Login() " > 
+      
+    
+  <!-- </ion-list> -->
+    <!-- <ion-item> -->
+ <div padding>
+           
+  <button ion-button block large  icon-right  (click)= "  Login() " > 
               <ion-icon name= ios-log-in large> دخول </ion-icon>   
               </button>
-     </ion-item>
-
-        <ion-item> اذا لم تمتلك حسابا قم بالتسجيل اولا </ion-item>  
-
-      <ion-item>
+     <!-- </ion-item> -->
+        
+        <p text-center> اذا لم تمتلك حسابا قم بالتسجيل اولا </p>  
+      
+      <!-- <ion-item> -->
       <button ion-button block large  icon-right (click)="signUP()">
-          <ion-icon name= ios-log-in  large>  انشاء حساب</ion-icon> 
+        <div style="margin: 8px">انشاء حساب</div>
+          <ion-icon name= ios-log-in  large>  </ion-icon> 
       </button>
-      </ion-item>
+      <!-- </ion-item> -->
 
-       <ion-item>  او قم بتسجيل الدخول باستخدام  </ion-item> 
-
-     <ion-item>
+       <p text-center>  او قم بتسجيل الدخول باستخدام  </p> 
+         
+     <!-- <ion-item> -->
       <button ion-button  block large icon-right  color="danger" (click)="google()">
-          <ion-icon ios= logo-google  large> google </ion-icon>
+          <div style="margin: 8px">google</div>
+        <ion-icon ios= logo-google  large>  </ion-icon>
       </button>
-     </ion-item>
-
-    <ion-item>
+     <!-- </ion-item> -->
+    
+         <br>
+       
+    <!-- <ion-item> -->
      <button ion-button  block large icon-right   (click)="facebook()">
-        <ion-icon name= logo-facebook  large>  facebook </ion-icon>
+        <div style="margin: 8px">facebook</div>
+        <ion-icon name= logo-facebook  large>   </ion-icon>
       </button>
-    </ion-item>
+    <!-- </ion-item> -->
 
-  </ion-list>
+  </div>
 
 </ion-content>
   
