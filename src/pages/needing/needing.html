@@ -14,12 +14,12 @@
  </ion-header>
 
 
-   <ion-content > 
-     
    
+     
+      <ion-content >
              
    
-        <ion-list *ngFor="let item of items   | async json">
+        <div *ngFor="let item of items   | async json">
           <ion-item *ngIf="item.hide == 0" >
             <ion-avatar item-start>
               <img src="./assets/imgs/about1.png">
@@ -32,6 +32,7 @@
              (click)="itemSelected(item.key,item.firstname,item.lastname,
              item.address,item.phone,item.infor)" block >التفاصيل</button >
           </ion-item>
-        </ion-list>
+        </div>
 
-    </ion-content>
+   </ion-content>
+  
