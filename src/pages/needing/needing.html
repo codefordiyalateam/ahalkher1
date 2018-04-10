@@ -5,8 +5,8 @@
    <ion-title >حاجات متبرع بها</ion-title>
    
         <ion-buttons end>
-          <button small outline ion-button color="light"  (click)="goToAdd()">
-            <ion-icon name='ios-add-circle' is-active="false" color="light">تبرع</ion-icon>
+          <button  ion-button color="light"  (click)="goToAdd()">
+            <img src="./assets/imgs/add5.png">
           </button>
         </ion-buttons>
           
@@ -22,7 +22,7 @@
         <div *ngFor="let item of items   | async json">
           <ion-item *ngIf="item.hide == 0" >
             <ion-avatar item-start>
-              <img src="./assets/imgs/about1.png">
+              <img src="./assets/imgs/about3.png">
             </ion-avatar>
             <h2 style="text-align:center">{{item.firstname}}</h2>
             <button ion-button 

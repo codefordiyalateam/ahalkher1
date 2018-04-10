@@ -75,7 +75,7 @@ import { AngularFireModule} from 'angularfire2';
     
     BrowserModule,
     IonicModule.forRoot(MyApp,{
-      backButtonText: 'الرجوع',
+      backButtonText: 'رجوع',
       backButtonIcon:'arrow-back'
     }),
     AngularFireModule.initializeApp(firebaseConfig),

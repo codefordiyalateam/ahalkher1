@@ -4,9 +4,7 @@ page-login {
 
         padding-top: 0;
         padding-right: 10px;        
-        color:rgb(97, 90, 90);
-         //color:#127bca;
-        // color:#f53d3d;
+        color:rgb(97, 90, 90);        
         font-weight: bold;            
         font-size: 15px;
      
@@ -21,15 +19,13 @@ page-login {
   
 
    .button{
-    border-radius: $button-md-border-radius;
-    
+    border-radius: $button-md-border-radius;    
     width: 100%;
     height: 45px;
     margin:0;          
     padding-right: 5px;
     border:2px;          
-    font-size: 15px;
-    
+    font-size: 15px;    
 
    }
    

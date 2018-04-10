@@ -1,8 +1,9 @@
 
  page-needing {    
     
-  .ion-buttons,button{
-    background-color:#5196DE;
+  .ion-button,button{
+    background-color:#127bca;
+   
  } 
   
 
@@ -22,10 +23,11 @@
     }
 
                
-     .img{
+     img{
 
      border-radius: 100px;
-      background-color:rgb(240, 12, 12) ;
+       height: 35px;
+       width: 35px;
                          
      }
 
@@ -40,7 +42,7 @@
      }
     
    
-         
+   
 
         
  }

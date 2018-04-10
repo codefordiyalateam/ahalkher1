@@ -23,8 +23,8 @@ page-addhumancases {
        color:black;
        padding-right: 5px;
        font-size: 15px; 
-      // border: 1px solid rgb(230, 55, 55);
-       border: 1px solid #f53d3d;   
+       border: 1px solid #127bca;
+      
     
         }
         
@@ -35,7 +35,7 @@ page-addhumancases {
    }
    .ion-textarea{
        width: 100%;
-       height: 150px;
+       height: 100px;
        padding: 12px 20px;
        box-sizing: border-box;
        border: 2px solid #ccc;
@@ -48,10 +48,11 @@ page-addhumancases {
        border-radius: $button-md-border-radius;
 
        width: 100%;
-       height: 50px;
+       height: 45px;
        margin:0;          
        padding-right: 5px;
-       border:2px;     
+       border:2px; 
+       background-color: #488aff;     
    }
 
    
