@@ -22,7 +22,8 @@ export class LoginPage {
   email :string ;
   password : string ;
 
-  constructor(private fb: Facebook,private googlePlus: GooglePlus, public alertCtrl:AlertController , public toastCtrl:ToastController,public fire: AngularFireAuth , public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fb: Facebook,private googlePlus: GooglePlus, public alertCtrl:AlertController ,
+     public toastCtrl:ToastController,public fire: AngularFireAuth , public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() { console.log('ionViewDidLoad LoginPage'); }

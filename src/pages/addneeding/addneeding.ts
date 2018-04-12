@@ -21,7 +21,8 @@ export class AddneedingPage {
   
   peoplelist: AngularFireList<any>;
   uid;
-  constructor(private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams, public af:AngularFireDatabase,private alertCtrl: AlertController) {
+  constructor(private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams,
+     public af:AngularFireDatabase,private alertCtrl: AlertController) {
 
     this.peoplelist=af.list('/device');
    
@@ -45,21 +46,21 @@ export class AddneedingPage {
      
       buttons: [
         {
-          text: 'Cancel',
-          role: 'cancel',
+          text: 'حسنا',
+         role: 'ok',
           handler: data => {
-            console.log('Cancel clicked');
+           console.log('Cancel clicked');
           }
         },
         {
-          text: 'Login',
+         // text: 'Login',
           handler: data => {
             if ((data.firstname =="") && (data.lastname =="") && (data.address=="") && (data.phone=="") &&(data.infor=="")) {
-              setTimeout(() => {
-								this.showAlert('Nome vazio','Por favor, preencha o campo de nome.');
-							}, 1000);
+             // setTimeout(() => {
+							//	this.showAlert('Nome vazio','Por favor, preencha o campo de nome.');
+             // }, 1000);
+              return false;
             }
-
     
            else {
              this.peoplelist.push({
@@ -77,7 +78,7 @@ export class AddneedingPage {
                   this.navCtrl.push( NeedingPage);
       
                 });
-                this.showAlert('Sucesso!','Jogador adicionado.');  
+                //this.showAlert('Sucesso!','Jogador adicionado.');  
                   }
                   
                 }
@@ -86,17 +87,17 @@ export class AddneedingPage {
             
           });
           
-          prompt.present();
+         prompt.present();
         }
         
-        showAlert(title, subTitle) {
-          let alert = this.alertCtrl.create({
-            title: title,
-            subTitle: subTitle,
-            buttons: ['OK']
-          });
-          alert.present();
-        }
+       //showAlert(title, subTitle) {
+        // let alert = this.alertCtrl.create({
+           // title: title,
+           //subTitle: subTitle,
+           // buttons: ['OK']
+          //});
+          //alert.present();
+        //}
   
   
   // createDevice(firstname,lastname, address,phone,infor){

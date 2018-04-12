@@ -81,7 +81,7 @@ import { AngularFireModule} from 'angularfire2';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule ,
-    HttpModule
+     HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
