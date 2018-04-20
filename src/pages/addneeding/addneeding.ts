@@ -11,7 +11,7 @@ import { AlertController } from 'ionic-angular';
 
 
 import { HomePage } from '../home/home';
-
+ 
 @IonicPage()
 @Component({
   selector: 'page-addneeding',
@@ -21,15 +21,27 @@ export class AddneedingPage {
   
   peoplelist: AngularFireList<any>;
   uid;
+
+
+  firstname=""
+  lastname="" 
+  address=""
+  phone=""
+  infor=""
+
+
+
   constructor(private fire:AngularFireAuth ,public navCtrl: NavController, public navParams: NavParams,
      public af:AngularFireDatabase,private alertCtrl: AlertController) {
 
     this.peoplelist=af.list('/device');
    
     this.fire.auth.onAuthStateChanged(function(user){
-      if(!user){
-        navCtrl.setRoot(LoginPage);
-      }
+      // if(!user){
+      //   this.navCtrl.push(LoginPage);
+      // }else{
+        
+      // }
        console.log(user);
        });
        this.fire.authState.subscribe(auth =>{
@@ -38,90 +50,48 @@ export class AddneedingPage {
           console.log(auth);
         }
       })
-  }
 
-  createDevice(firstname,lastname, address,phone,infor){
-    let prompt = this.alertCtrl.create({
-      title: 'رجاءا قم بمليء جميع الادخالات',
-     
-      buttons: [
-        {
-          text: 'حسنا',
-         role: 'ok',
-          handler: data => {
-           console.log('Cancel clicked');
-          }
-        },
-        {
-         // text: 'Login',
-          handler: data => {
-            if ((data.firstname =="") && (data.lastname =="") && (data.address=="") && (data.phone=="") &&(data.infor=="")) {
-             // setTimeout(() => {
-							//	this.showAlert('Nome vazio','Por favor, preencha o campo de nome.');
-             // }, 1000);
-              return false;
-            }
-    
-           else {
-             this.peoplelist.push({
-            key_id: new Date().getTime(),
-              firstname :data.firstname ,
-                lastname :data.lastname,
-                address:data.address,
-                phone : data.phone,
-                infor:data.infor,
-                addBy:this.uid ,
-                hide:0     
-                  
-                }).then(data => {
-        
-                  this.navCtrl.push( NeedingPage);
       
-                });
-                //this.showAlert('Sucesso!','Jogador adicionado.');  
-                  }
-                  
-                }
-              }
-            ]
-            
-          });
-          
-         prompt.present();
-        }
+  }
+ 
+  createDevice(firstname,lastname, address,phone,infor){
+
+    if( this.firstname.trim()  ===''  && this.lastname.trim() === '' && this.address.trim()   ===''  &&  this.phone.trim()   ===''  && this.infor.trim()   ==='' ){
+
+      let alert1 = this.alertCtrl.create({
+        title: 'رجاءا قم بمليء جميع الادخالات',
         
-       //showAlert(title, subTitle) {
-        // let alert = this.alertCtrl.create({
-           // title: title,
-           //subTitle: subTitle,
-           // buttons: ['OK']
-          //});
-          //alert.present();
-        //}
-  
-  
-  // createDevice(firstname,lastname, address,phone,infor){
-  //   this.peoplelist.push({
-  //     key_id: new Date().getTime(),
-  //       firstname :firstname ,
-  //         lastname :lastname,
-  //         address:address,
-  //         phone : phone,
-  //         infor:infor,
-  //         addBy:this.uid ,
-  //         hide:0     
+        buttons: ['OK']
+      });
+      alert1.present();
+
+
+
+    }
+
+    else{
+    this.peoplelist.push({
+      key_id: new Date().getTime(),
+        firstname :this.firstname ,
+          lastname :this.lastname,
+          address:this.address,
+          phone : this.phone,
+          infor:this.infor,
+          addBy:this.uid ,
+          hide:0     
             
-  //         }).then(newPerson => {
+          }).then(newPerson => {
   
-  //           this.navCtrl.push( NeedingPage);
-  //         });
-  // }
+            this.navCtrl.push( NeedingPage);
+          });
+        }
+   }
 
   
 
 
   goToMain(){
-    this.navCtrl.push (HomePage)
+    this.navCtrl.setRoot(HomePage)
   }
 
 
@@ -129,6 +99,12 @@ export class AddneedingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddneedingPage');
+
+
+    
+
+
+
   }
 
 

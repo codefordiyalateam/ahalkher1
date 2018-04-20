@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LoginPage} from '../login/login';
+import { AlertController } from 'ionic-angular';
 
-import { AngularFireDatabase ,AngularFireList ,AngularFireAction } from 'angularfire2/database'; 
+import { AngularFireDatabase ,AngularFireList  } from 'angularfire2/database'; 
 import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/switchMap';
-import firebase from 'firebase';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import {AddneedingPage }  from  '../addneeding/addneeding';
 
 import { HomePage } from '../home/home';
-import {AddneedingPage }  from  '../addneeding/addneeding';
 import { ShowneedingPage }  from  '../showneeding/showneeding';
-import { SignupPage } from '../signup/signup';
 
 @IonicPage()
 @Component({
@@ -30,7 +27,7 @@ export class NeedingPage {
   userid;
    
 
-  constructor(private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public af:AngularFireDatabase) {
+  constructor(public alertCtrl: AlertController,private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams,public af:AngularFireDatabase) {
   
   
     this.itemsRef = af.list('/device')
@@ -59,7 +56,7 @@ export class NeedingPage {
   }
 
     itemSelected(key, firstname, lastname,address, phone,infor,addBy ){
-    // console.log(key, firstname, lastname, address, phone, infor);
+     console.log(key, firstname, lastname, address, phone, infor);
      this.navCtrl.push(ShowneedingPage,{
       key : key,
       firstname : firstname,
@@ -82,21 +79,28 @@ export class NeedingPage {
 
 
   goToMain(){
-    this.navCtrl.push (HomePage)
+    this.navCtrl.push(HomePage)
   }
 
    goToAdd(){   
    
-   this.navCtrl.push (LoginPage)
+   this.navCtrl.setRoot(LoginPage)
 
    }
 
   deleteMy(key){
-    alert("ok")
-    this. userData = this.af.list('/device')
-      this.userData.update(key,{
+
+      this.itemsRef.update(key,{
         "hide":"1"
-      })
+      }).then(newPerson => {
+  
+        let alert = this.alertCtrl.create({
+          title: 'تم الحذف',
+          buttons: ['OK']
+        });
+        alert.present();
+      
+      });
   }
 
   ionViewDidLoad() {

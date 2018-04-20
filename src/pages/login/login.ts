@@ -10,6 +10,7 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import {AddneedingPage} from '../addneeding/addneeding';
 import {HomePage} from '../home/home';
 import {SignupPage} from '../signup/signup';
+import { AngularFireDatabase ,AngularFireList  } from 'angularfire2/database';
 
 
 @IonicPage()
@@ -21,12 +22,51 @@ export class LoginPage {
 
   email :string ;
   password : string ;
+  peoplelist: AngularFireList<any>;
+  uid;
 
-  constructor(private fb: Facebook,private googlePlus: GooglePlus, public alertCtrl:AlertController ,
+
+  constructor( public af:AngularFireDatabase,private fb: Facebook,private googlePlus: GooglePlus, public alertCtrl:AlertController ,
      public toastCtrl:ToastController,public fire: AngularFireAuth , public navCtrl: NavController, public navParams: NavParams) {
-  }
+  
+      this.peoplelist=af.list('/device');
 
-  ionViewDidLoad() { console.log('ionViewDidLoad LoginPage'); }
+
+      this.fire.auth.onAuthStateChanged(function(user){
+        // if(!user){
+        //   this.navCtrl.push(LoginPage);
+        // }else{
+          
+        // }
+         console.log(user);
+         });
+         this.fire.authState.subscribe(auth =>{
+          if (auth) {
+            this.uid=auth.uid;
+            console.log(auth);
+          }
+        })
+         
+
+
+  
+    }
+
+
+    goToMain(){
+      this.navCtrl.setRoot(HomePage)
+    }
+
+    
+  ionViewDidLoad() { 
+    
+   
+   
+
+
+
+    
+    console.log('ionViewDidLoad LoginPage'); }
 
 
 
@@ -43,7 +83,7 @@ export class LoginPage {
     this.fire.auth.signInWithEmailAndPassword(this.email,this.password).then(user =>{
       toast.present();
     
-   this.navCtrl.setRoot(AddneedingPage);
+   this.navCtrl.push(AddneedingPage);
      
     }).catch(error=>{
       this.showAlert();
