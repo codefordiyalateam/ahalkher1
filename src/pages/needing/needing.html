@@ -1,12 +1,12 @@
 
- <ion-header>
+ <ion-header  style="  border:3px solid #0FB9B1;" >
 
-  <ion-navbar color="primary"> 
-   <ion-title >حاجات متبرع بها</ion-title>
+  <ion-navbar color="tafasil"> 
+ 
    
-        <ion-buttons end>
-          <button  ion-button color="light"  (click)="goToAdd()">
-              <ion-icon name='ios-add' is-active="false"></ion-icon>&nbsp;
+        <ion-buttons style="  border:3px solid #0FB9B1;" end>
+          <button style="  border:3px solid #0FB9B1;" ion-button color="light"  (click)="goToAdd()">
+              <ion-icon  style="  border:3px solid #0FB9B1;"  name='ios-add' is-active="false"></ion-icon>&nbsp;
               اضف
           </button>
         </ion-buttons>
@@ -18,7 +18,7 @@
    
      
       <ion-content >
- 
+          <img src="assets/imgs/haja.png"   /> 
 
 
 
@@ -29,13 +29,13 @@
                 <ion-item-sliding>
                   <ion-item>
                       <ion-thumbnail item-start *ngIf="userid !== item.addBy">
-                          <img src="./assets/imgs/about3.png">
+                          <img class="img1" src="./assets/imgs/about3.png">
                         </ion-thumbnail>
                     <ion-thumbnail item-start *ngIf="userid == item.addBy">
-                        <img src="./assets/imgs/about4.png">
+                        <img class="img1" src="./assets/imgs/about4.png">
                       </ion-thumbnail>
 
-                    <h2>{{item.firstname}}</h2>
+                    <p>{{item.lastname}}</p>
                     <button ion-button clear item-end 
                 (click)="itemSelected(item.key,item.firstname,item.lastname,
                 item.address,item.phone,item.infor)">التفاصيل</button>

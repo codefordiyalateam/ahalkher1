@@ -1,62 +1,69 @@
+<style>
 
-<ion-header>
+   .imgSize3{
+     width: 40%;
+ }
 
-  <ion-navbar color="primary">
-    <ion-title>تفاصيل الحاجة</ion-title>
-  </ion-navbar>
+.card-header-ios1 {
+padding: 2px;
+}
 
-</ion-header>
-
-
-<ion-content padding>
-
-    <ion-card >
-
-        <ion-item   color="white">
-            <ion-avatar item-start>             
-                <img src="assets/imgs/about3.png">
-              </ion-avatar>
-      
-           <h2> الحاجة : {{myInfo.firstname}} </h2>   
-
-           <h2> المتبرع : {{myInfo.lastname}}</h2>
-
-             <h2>{{addBy}}</h2>
-           <!-- <button ion-button block *ngIf="myInfo.addBy == userid" >
-              حذف
-            </button> -->
-          </ion-item>    
-         
-        </ion-card>
+</style>
 
 
 
-        <ion-card   color="white">        
+<ion-header no-border  >
+    <ion-navbar color="tafasil" no-border >
+  
+    </ion-navbar >
+   
+  </ion-header>
 
+
+<ion-content >
+    <img src="assets/imgs/Group2765.png"   /> 
+
+    <div padding>
+        <ion-card>
             <ion-card-header>
-                <h2 text-right  style="color:#f53d3d;font-weight:bold">نبذة عن الحاجة </h2>
-           </ion-card-header>
-
-        <ion-card-content>  
-                 
-          <p text-justify>  {{myInfo.infor}} </p>   
-             
-             <ion-row>
-
-          <ion-col>
-            <p  text-right><ion-icon ios="ios-call" md="md-call"  color="danger" >   </ion-icon>
-              {{myInfo.phone}} </p>
-               </ion-col>  
-
-             <ion-col>
-              <p   text-left><ion-icon ios="ios-compass" md="md-compass"  color="primary" > </ion-icon>                       
-                {{myInfo.address}} </p>            
-             </ion-col>
-         
+                <p> المتبرع : {{myInfo.lastname}}   </p>
+            </ion-card-header>         
+          </ion-card>
+          <ion-card>
+              <ion-card-header>
+                  <p>  {{myInfo.infor}}   </p>
+              </ion-card-header>         
+            </ion-card>
+            <ion-card>
+                <ion-card-header class="card-header-ios1">
+    <ion-grid  >
+        <ion-row>
+          <ion-col col-6 >                   
+              <img class="imgSize3" (click)="goToNeeding()"   src="assets/imgs/item/compass-green.png"   />           
+          </ion-col>
+          <ion-col col-6  class="imgSize3">      
+              <p>  {{myInfo.address}}   </p>
+        </ion-col>
         </ion-row>
-
-  </ion-card-content> 
-     </ion-card> 
-    
+      </ion-grid>
+                </ion-card-header>         
+              </ion-card>
+ 
+              <ion-card>
+                  <ion-card-header  class="card-header-ios1">
+      <ion-grid  >
+      <ion-row>
+        <ion-col col-6 >                   
+            <img class="imgSize3" (click)="goToNeeding()"   src="assets/imgs/item/phone-green.png"   />           
+        </ion-col>
+        <ion-col col-6  class="imgSize3">      
+            <p>  {{myInfo.phone}}   </p>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+                  </ion-card-header>         
+                </ion-card>
+              </div>
+   
 
 </ion-content>

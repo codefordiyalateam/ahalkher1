@@ -71,6 +71,13 @@ export class LoginPage {
 
 
   Login(){
+
+    
+if (this.email === undefined && this.password === undefined ) {
+  console.log('email: '+this.email + '  password: '+this.password)
+     return  this.showAlert();
+}
+
     let toast = this.toastCtrl.create({
       message: 'اهلا بك مجددا  ',
       duration: 3000,
@@ -80,6 +87,10 @@ export class LoginPage {
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');
     }); 
+
+
+
+
     this.fire.auth.signInWithEmailAndPassword(this.email,this.password).then(user =>{
       toast.present();
     
@@ -87,6 +98,7 @@ export class LoginPage {
      
     }).catch(error=>{
       this.showAlert();
+      
     })
       
   }

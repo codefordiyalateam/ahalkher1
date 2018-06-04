@@ -1,5 +1,13 @@
 
  page-needing {    
+
+
+  .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+
     
   .ion-button,button{
     background-color:#127bca;
@@ -23,7 +31,7 @@
     }
 
                
-     img{
+     .img1{
 
      border-radius: 100px;
        height: 35px;

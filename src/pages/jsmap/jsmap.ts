@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFireDatabase ,AngularFireList  } from 'angularfire2/database';
+import { AlertController } from 'ionic-angular';
 
 import {    AngularFireAction } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
@@ -25,7 +26,7 @@ export class JsmapPage {
   
 coordinates :any;
 
-  constructor(public af:AngularFireDatabase,public navCtrl: NavController,
+  constructor(public alertCtrl: AlertController , public af:AngularFireDatabase,public navCtrl: NavController,
      public navParams: NavParams,private http:Http) {
 
       //added
@@ -65,7 +66,7 @@ coordinates :any;
       actions.forEach(action => {
       
        
-        console.log(action.payload.val().latitude);
+       // console.log(action.payload.val().latitude);
 
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(action.payload.val().latitude, action.payload.val().longitude ),
@@ -94,6 +95,7 @@ coordinates :any;
 
     }
    // }
+   
    
 
 
